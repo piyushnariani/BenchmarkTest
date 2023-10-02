@@ -35,35 +35,35 @@ namespace BenchmarkTest
             }
         }
 
-        //[Benchmark]
-        //public void For()
-        //{
-        //    for (int i = 0; i < slugs.Count; i++)
-        //    {
-        //        var slug = slugs[i];
-        //    }
-        //}
+        [Benchmark]
+        public void For()
+        {
+           for (int i = 0; i < slugs.Count; i++)
+           {
+               var slug = slugs[i];
+           }
+        }
 
-        //[Benchmark]
-        //public void ForEach()
-        //{
-        //    foreach (var item in slugs)
-        //    {
-        //        var slug = item;
-        //    }
-        //}
+        [Benchmark]
+        public void ForEach()
+        {
+           foreach (var item in slugs)
+           {
+               var slug = item;
+           }
+        }
 
-        //[Benchmark]
-        //public void ShuffleList()
-        //{
-        //    for(int i=slugs.Count-1; i>0; i--)
-        //    {
-        //        var k = _rand.Next(i + 1);
-        //        var val = slugs[k];
-        //        slugs[k] = slugs[i];
-        //        slugs[i] = val;
-        //    }
-        //}
+        [Benchmark]
+        public void ShuffleList()
+        {
+           for(int i=slugs.Count-1; i>0; i--)
+           {
+               var k = _rand.Next(i + 1);
+               var val = slugs[k];
+               slugs[k] = slugs[i];
+               slugs[i] = val;
+           }
+        }
 
         [Benchmark]
         public void SortListAsscending()
@@ -77,17 +77,17 @@ namespace BenchmarkTest
             var list = slugs.OrderByDescending(x => x.Id).ToList();
         }
 
-        public List<Slug> MergeSort(List<Slug> unsortedList)
-        {
-            if(unsortedList.Count <= 1)
-                return unsortedList;
+        // public List<Slug> MergeSort(List<Slug> unsortedList)
+        // {
+        //     if(unsortedList.Count <= 1)
+        //         return unsortedList;
 
-            List<Slug> left = new List<Slug>();
-            List<Slug> right = new List<Slug>();
+        //     List<Slug> left = new List<Slug>();
+        //     List<Slug> right = new List<Slug>();
 
-            var middle = unsortedList.Count / 2;
+        //     var middle = unsortedList.Count / 2;
 
-            for(int i = 0; )
-        }
+        //     for(int i = 0; )
+        // }
     }
 }
